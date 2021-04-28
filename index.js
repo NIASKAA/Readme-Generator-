@@ -33,11 +33,34 @@ function userPrompt(){
             type: "input",
             message: "Link to the app?",
         },
+        {
+            name: "contribute",
+            type: "input",
+            message: "Who else contributed?"
+        }
     ]);
 }
 
 function createMDF(answer){
-    return ``;
+    return `
+    #${answer.title}
+
+    ## About
+    ${answer.about}
+
+    ## Usage
+    ${answer.type}
+
+    ## License
+    ${answer.license}
+
+    ## Links to application
+    ${answer.links}
+    ${answer.link1}
+
+    ## Contribution 
+    ${answer.contribution}
+    `;
 }
 
 function init(){
@@ -47,3 +70,5 @@ function init(){
     console.log("Created README Successfully");
 
 }
+
+init()
