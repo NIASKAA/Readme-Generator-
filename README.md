@@ -14,8 +14,7 @@ Node.js, Javascript, FS, inquirer
 [License](https://opensource.org/licenses/MIT)
 
 # Links to application
-None
-None
+https://github.com/NIASKAA/Readme-Generator-
 
 # Contribution 
 Just me
