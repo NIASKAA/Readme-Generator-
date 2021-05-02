@@ -1,24 +1,24 @@
   
-    ## Name of Project
+    # Name of Project
     Readme Generator
 
-    ## About
+    # About
     Creating a readme file
 
-    ## Usage
+    # Usage
     node.js, inquirer, fs, javascript
 
-    ## License
+    # License
     ![License](https://img.shields.io/badge/license-MIT-blue.svg "License Badge")
     [License](https://opensource.org/licenses/MIT)
 
-    ## Links to application
+    # Links to application
     none
     None
 
-    ## Contribution 
+    # Contribution 
     undefined
 
-    ## Github Name
+    # Github Name
     NIASKAA
     
