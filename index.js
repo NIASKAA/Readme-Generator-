@@ -1,8 +1,8 @@
 const inquirer = require("inquirer");
-const fs =("fs");
+const fs = require('fs');
 
-function userPrompt(){
-    inquirer.prompt([
+//Here we make an object that list out all the questions for user
+    const promptQuestions = [ 
         {
             name: "title",
             type: "input",
@@ -22,6 +22,11 @@ function userPrompt(){
             name: "license",
             type: "input",
             message: "Any licenses?",
+            choices: [
+                "MIT",
+                "Apache",
+                "ISC",
+            ],
         },
         {
             name: "links",
@@ -37,38 +42,61 @@ function userPrompt(){
             name: "contribute",
             type: "input",
             message: "Who else contributed?"
-        }
-    ]);
-}
+        },
+        {
+            name: "userName",
+            type: 'input',
+            message: "Github user name?"
+        },
 
-function createMDF(answer){
-    return `
-    #${answer.title}
+    ]
+
+// This function basically takes the answers from promptQuestion and but it into the readme file. 
+function createMDF(answers) {
+    return `  
+    ## Name of Project
+    ${answers.title}
 
     ## About
-    ${answer.about}
+    ${answers.about}
 
     ## Usage
-    ${answer.type}
+    ${answers.type}
 
     ## License
-    ${answer.license}
+    ![License](https://img.shields.io/badge/license-${answers.license}-blue.svg "License Badge")
+    [License](https://opensource.org/licenses/${answers.license})
 
     ## Links to application
-    ${answer.links}
-    ${answer.link1}
+    ${answers.links}
+    ${answers.link1}
 
     ## Contribution 
-    ${answer.contribution}
+    ${answers.contribution}
+
+    ## Github Name
+    ${answers.userName}
     `;
 }
 
-function init(){
-    const answer = userPrompt();
-    const readme = createMDF(answer);
-    fs.fileWrite("README.md", readme);
-    console.log("Created README Successfully");
-
+// This function is the function where we want fs to write out our readme and generate it as a markdown file. 
+function writeToFile(answers) {
+    fs.writeFile("README.md", answers, function(err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("Created Readme")
+    })
 }
 
-init()
+// This function will combine the inquirer const object and our WriteToFile function and combine together to fill out the responses in the 
+// readme file
+function init(){
+    inquirer.prompt(promptQuestions)
+    .then(function(answers) {
+        writeToFile(createMDF(answers));
+    })
+}
+
+//calling the init function to make get everything to work when node calls upon index.js
+init();
