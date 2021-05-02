@@ -1,24 +1,24 @@
   
-# Name of Project
-Alan
+   # Name of Project
+    Readme Generator
 
-# About
-test
+   # About
+    Creating a readme file
 
-# Usage
-test
+   # Usage
+    node.js, inquirer, fs, javascript
 
-# License
-![License](https://img.shields.io/badge/license-test-blue.svg "License Badge")
-[License](https://opensource.org/licenses/test)
+   # License
+    ![License](https://img.shields.io/badge/license-MIT-blue.svg "License Badge")
+    [License](https://opensource.org/licenses/MIT)
 
-# Links to application
-test
-test
+   # Links to application
+    none
+    None
 
-# Contribution 
-undefined
+   # Contribution 
+    undefined
 
-# Github Name
-test
+   # Github Name
+    NIASKAA
     
