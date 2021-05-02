@@ -54,28 +54,28 @@ const fs = require('fs');
 // This function basically takes the answers from promptQuestion and but it into the readme file. 
 function createMDF(answers) {
     return `  
-    ## Name of Project
-    ${answers.title}
+# Name of Project
+${answers.title}
 
-    ## About
-    ${answers.about}
+# About
+${answers.about}
 
-    ## Usage
-    ${answers.type}
+# Usage
+${answers.type}
 
-    ## License
-    ![License](https://img.shields.io/badge/license-${answers.license}-blue.svg "License Badge")
-    [License](https://opensource.org/licenses/${answers.license})
+# License
+![License](https://img.shields.io/badge/license-${answers.license}-blue.svg "License Badge")
+[License](https://opensource.org/licenses/${answers.license})
 
-    ## Links to application
-    ${answers.links}
-    ${answers.link1}
+# Links to application
+${answers.links}
+${answers.link1}
 
-    ## Contribution 
-    ${answers.contribution}
+# Contribution 
+${answers.contribution}
 
-    ## Github Name
-    ${answers.userName}
+# Github Name
+${answers.userName}
     `;
 }
 
